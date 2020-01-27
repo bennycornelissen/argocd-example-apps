@@ -1,6 +1,6 @@
 spec:
   destination:
-    server: https://kubernetes.default.svc
+    server: https://0BEC258040D746CD6F7797CB84983E11.gr7.eu-west-1.eks.amazonaws.com
     namespace: default
   source:
     repoURL: https://github.com/bennycornelissen/argocd-example-apps
