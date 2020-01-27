@@ -1,6 +1,6 @@
 spec:
   destination:
-    server: https://0BEC258040D746CD6F7797CB84983E11.gr7.eu-west-1.eks.amazonaws.com
+    server: https://E4F196DFD9368240885050B4C30E496D.gr7.eu-west-1.eks.amazonaws.com
     namespace: default
   source:
     repoURL: https://github.com/bennycornelissen/argocd-example-apps
