@@ -2,15 +2,23 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: helm-guestbook
-  namespace: argocd
+  namespace: default
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: helm-guestbook
-    server: {{ .Values.spec.destination.server }}
+    server:
+      ? .Values.spec.destination.server: null
+      : null
   project: default
   source:
     path: helm-guestbook
-    repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: {{ .Values.spec.source.targetRevision }}
+    repoURL:
+      ? .Values.spec.source.repoURL: null
+      : null
+    targetRevision:
+      ? .Values.spec.source.targetRevision: null
+      : null
+helm-hooks:
+  yaml: kustomize-guestbook.yaml
